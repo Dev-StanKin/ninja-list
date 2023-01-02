@@ -16,7 +16,7 @@ const Ninjas = ({ ninjas }: any) => {
   return (
     <div>
       <h1>All Ninjas</h1>
-      {ninjas.map((ninja) => (
+      {ninjas.map((ninja: any) => (
         <Link
           href={'/ninjas/' + ninja.id}
           key={ninja.id}
