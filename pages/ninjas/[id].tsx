@@ -3,7 +3,7 @@ export const getStaticPaths = async () => {
   const data = await res.json();
 
   // map data to an array of path objects with params (id)
-  const paths = data.map((ninja) => {
+  const paths = data.map((ninja: any) => {
     return {
       params: { id: ninja.id.toString() },
     };
@@ -15,7 +15,7 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async (context) => {
+export const getStaticProps = async (context: any) => {
   const id = context.params.id;
   const res = await fetch('https://jsonplaceholder.typicode.com/users/' + id);
   const data = await res.json();
@@ -25,7 +25,7 @@ export const getStaticProps = async (context) => {
   };
 };
 
-const Details = ({ ninja }) => {
+const Details = ({ ninja }: any) => {
   return (
     <div>
       <h1>{ninja.name}</h1>
